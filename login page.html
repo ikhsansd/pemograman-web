@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #141e30;
+            background-image: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+        .wave svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            color: #fff;
+        }
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 300px;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .form-group input::placeholder {
+            color: #fff;
+        }
+        .form-group input:focus::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .form-group input[type="submit"] {
+            background: #00bcd4;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-group input[type="submit"]:hover {
+            background: #0097a7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L60,144C120,160,240,192,360,208C480,224,600,224,720,197.3C840,171,960,117,1080,122.7C1200,128,1320,192,1380,224L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+        </div>
+        <div class="content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Ganti kondisi ini dengan kondisi yang sesuai dengan kebutuhan aplikasi Anda
+            if (username === "ikhsan" && password === "udin") {
+                alert("Selamat datang, " + username + "!");
+                // Redirect ke halaman index.html setelah login berhasil
+                window.location.href = "index1.html";
+            } else {
+                alert("Username atau password salah. Silakan coba lagi.");
+            }
+        });
+    </script>
+</body>
+</html>
