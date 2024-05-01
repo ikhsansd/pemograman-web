@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Combined HTML Example</title>
+    <script type="text/javascript">
+        // Skrip untuk Jam
+        var jam = 17;
+        if (jam <= 10) {
+            alert("Selamat Pagi.");
+        } else if (jam > 10 && jam <= 15) {
+            alert("Selamat Siang.");
+        } else {
+            alert("Selamat Sore.");
+        }
+
+        // Skrip untuk Penjumlahan
+        function sumNumbers() {
+            var bil1 = parseFloat(prompt("Bilangan 1", "0"));
+            var bil2 = parseFloat(prompt("Bilangan 2", "0"));
+            var jml = bil1 + bil2;
+            document.getElementById("result").innerText = "Hasil penjumlahan: " + jml;
+        }
+
+        // Skrip untuk Hello World
+        function displayMessage() {
+            alert("Hello World!");
+        }
+
+        // Skrip untuk Perkalian
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        // Skrip untuk Validasi Formulir
+        function validate_form(form) {
+            var email = form.email.value;
+            return email.includes("@"); // Sederhana validasi email
+        }
+    </script>
+    <style type="text/css">
+        .jam {
+            font-size: 24px;
+            color: hsl(0, 100%, 50%);
+        }
+    </style>
+</head>
+
+<body onload="document.getElementById('digital_clock').innerText = 'Jam Digital Onload'">
+    <!-- Bagian Penjumlahan -->
+    <h2>Penjumlahan</h2>
+    <button onclick="sumNumbers()">Hitung Jumlah</button>
+    <p id="result">Hasil penjumlahan akan muncul di sini</p>
+
+    <!-- Bagian Hello World -->
+    <h2>Hello World Button</h2>
+    <form>
+        <input type="button" value="Click me!" onclick="displayMessage()" />
+    </form>
+
+    <!-- Bagian Perkalian -->
+    <h2>Perkalian</h2>
+    <p>Hasil Perkalian: <span id="multiplication_result">11 x 10 = 110</span></p>
+
+    <!-- Bagian Jam Digital -->
+    <h2>Jam Digital</h2>
+    <div id="digital_clock" class="jam">Jam Digital</div>
+
+    <!-- Bagian Validasi Formulir -->
+    <h2>Formulir</h2>
+    <form action="submit.htm" onsubmit="return validate_form(this)" method="post">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" size="30" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Bagian Pilihan Propinsi -->
+    <h2>Pilihan Propinsi</h2>
+    <form>
+        <select name="propinsi" onChange="alert('Tampil kota pada propinsi ' + this.value);">
+            <option value="Sumut">Sumatera Utara</option>
+            <option value="NAD">Nanggroe Aceh Darusalam</option>
+            <option value="Jabar">Jawa Barat</option>
+        </select>
+    </form>
+
+    <!-- Bagian MouseOver -->
+    <h2>MouseOver Example</h2>
+    <a href="http://www.w3schools.com" onmouseover="alert('An onMouseOver event');">
+        www.w3schools.com
+    </a>
+</body>
+
+</html>
