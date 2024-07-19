@@ -18,6 +18,10 @@
                             <a class="nav-link  ps-2 <?php echo ((isset($_GET['x']) && $_GET['x']=='home') || !isset($_GET['x'])) ? 'active link-light' : 'link-dark' ;?> "
                                 aria-current="page" href="home"><i class="bi bi-house"></i> Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='layanan') ? 'active link-light' : 'link-dark' ;?>" href="layanan"><i class="bi bi-bag-check"></i>
+                                Layanan</a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='order') ? 'active link-light' : 'link-dark' ;?>" href="order"><i class="bi bi-bag-check"></i>
@@ -27,15 +31,17 @@
                             <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='customer') ? 'active link-light' : 'link-dark' ;?>" href="customer"><i
                                     class="bi bi-people"></i> Customer</a>
                         </li>
+                        <?php if($hasil['level']==1){?>
+
                         <li class="nav-item">
-                            <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='tujuan') ? 'active link-light' : 'link-dark' ;?>" href="tujuan"><i class="bi bi-geo-alt"></i>
-                                Tujuan</a>
+                            <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='user') ? 'active link-light' : 'link-dark' ;?>" href="user"><i class="bi bi-geo-alt"></i>
+                                User</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  ps-2 <?php echo (isset($_GET['x']) && $_GET['x']=='report') ? 'active link-light' : 'link-dark' ;?>" href="report"><i class="bi bi-flag"></i>
                                 Report</a>
                         </li>
-
+                        <?php }?>
                     </ul>
                 </div>
             </div>

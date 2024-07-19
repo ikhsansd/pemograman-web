@@ -1,5 +1,6 @@
 
             <?php
+            session_start();
             if(isset($_GET['x']) && $_GET['x']=='home'){
                 $page = "home.php";
                 include "main.php";
@@ -9,15 +10,31 @@
             }else if(isset($_GET['x']) && $_GET['x']=='customer'){
                 $page = "customer.php";
                 include "main.php";
-            }else if(isset($_GET['x']) && $_GET['x']=='tujuan'){
-                $page = "tujuan.php";
-                include "main.php";
+            }else if(isset($_GET['x']) && $_GET['x']=='user'){
+                if($_SESSION['level_ojesis']==1){
+                    $page = "user.php";
+                    include "main.php";
+                }else{
+                    $page = "home.php";
+                    include "main.php";
+                }
             }else if(isset($_GET['x']) && $_GET['x']=='report'){
-                $page = "report.php";
+                if($_SESSION['level_ojesis']==1){
+                    $page = "report.php";
+                    include "main.php";
+                }else{
+                    $page = "home.php";
+                    include "main.php";
+                }
+            }else if(isset($_GET['x']) && $_GET['x']=='layanan'){
+                $page = "layanan.php";
                 include "main.php";
             }else if(isset($_GET['x']) && $_GET['x']=='login'){
                 include "login.php";
+            }else if(isset($_GET['x']) && $_GET['x']=='logout'){
+                include "proses/proses_logout.php";
             }else{
+                $page = "home.php";
                 include "main.php";}
             ?>
            

@@ -1,3 +1,18 @@
+<?php
+    
+    if(empty($_SESSION['username_ojesis'])){
+        header('location:login');
+    }
+
+    include "proses/connect.php";
+    $query = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$_SESSION[username_ojesis]'");
+    $hasil = mysqli_fetch_array($query);
+
+   
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body style="height: 3000px">
+<body>
     <!-- header-->
     <?php include "header.php"; ?>
     <!-- end header-->
