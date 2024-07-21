@@ -57,7 +57,7 @@ while ($record = mysqli_fetch_array($query)) {
                                         <div class="form-floating mb-3">
                                             <select class="form-select" aria-label="Default select example" name="level"
                                                 required>
-                                                <option selected hidden valaue="0">Pilih level user</option>
+                                                <option selected hidden valaue="">Pilih level user</option>
                                                 <option value="1">Pemilik/admin</option>
                                                 <option value="2">Kasir</option>
                                                 <option value="3">Siswa</option>
@@ -133,7 +133,7 @@ while ($record = mysqli_fetch_array($query)) {
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput"
+                                            <input <?php echo  ($row['username'] == $_SESSION['username_ojesis']) ? 'disabled' : '' ; ?> type="email" class="form-control" id="floatingInput"
                                                 placeholder="name@example.com" name="username" required
                                                 value="<?php echo $row['username']?>">
                                             <label for="floatingInput">Username</label>
@@ -383,19 +383,3 @@ while ($record = mysqli_fetch_array($query)) {
     </div>
 </div>
 
-<script>
-(() => {
-    'use strict';
-    const forms = document.querySelectorAll('.needs-validation');
-
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        }, false);
-    });
-})();
-</script>
